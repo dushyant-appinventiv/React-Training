@@ -1,12 +1,13 @@
 import React from "react";
-import Home from "./modules/home";
+import Container from "./modules/Assignment1/Container";
+import "./App.css";
 
 class App extends React.Component {
   render() {
     return (
-      <>
-        <Home />
-      </>
+      <div id='appWrapper'>
+        <Container />
+      </div>
     );
   }
 }
