@@ -1,20 +1,12 @@
 import React, { Component } from "react";
+import "./index.css";
 
 class Home extends Component {
   render() {
     return (
-      <div>
+      <div className={"homeContainer"}>
         <h1>{"Hello form Home"}</h1>
-      </div>
-    );
-  }
-}
-
-export class Home1 extends Component {
-  render() {
-    return (
-      <div>
-        <h1> {"Hello from Home1"} </h1>
+        <h2 id={"h2Head"}> H2 Heading </h2>
       </div>
     );
   }
