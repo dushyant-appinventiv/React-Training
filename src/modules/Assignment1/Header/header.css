@@ -1,0 +1,30 @@
+.headerContainer {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.heading {
+  width: 314.5px;
+  font-weight: 350;
+  font-size: 3rem;
+}
+
+.heading span {
+  font-weight: bold;
+}
+
+.contactBox {
+  display: flex;
+  letter-spacing: 0.6px;
+  flex-direction: column;
+  text-align: right;
+  font-weight: bold;
+}
+
+.contactBox a {
+  text-decoration: none;
+  color: rgb(148, 109, 211);
+}

@@ -1,0 +1,40 @@
+.infoContainer {
+  background-color: #5e00bd;
+  height: 100%;
+  width: 420px;
+  padding: 30px;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content h1 {
+  font-size: 3rem;
+  font-weight: 300;
+  width: 320px;
+  line-height: 1;
+}
+
+.content span {
+  font-weight: bold;
+}
+
+.content p {
+  text-align: justify;
+  margin-top: 30px;
+  font-weight: 500;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  width: 340px;
+  padding-right: 50px;
+}
+
+.infoImage {
+  text-align: center;
+  margin: 70px 0px 20px;
+  height: 320px;
+  width: 350px;
+}
