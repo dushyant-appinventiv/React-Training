@@ -1,12 +1,12 @@
 import React from "react";
-import Home, {Home1} from "./modules/home";
+import Home, { Home1 } from "./modules/home";
 
-class App extends React.Component{
-  render(){
-    return(
+class App extends React.Component {
+  render() {
+    return (
       <>
-      <Home />
-      <Home1/>
+        <Home />
+        <Home1 />
       </>
     );
   }
