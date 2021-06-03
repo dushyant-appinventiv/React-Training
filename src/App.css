@@ -4,3 +4,8 @@
   background-color: rgba(229, 233, 234, 255);
   padding: 2% 10%;
 }
+
+.appWrapperAssignment2 {
+  width: 100%;
+  overflow-x: hidden;
+}

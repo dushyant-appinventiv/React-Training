@@ -1,0 +1,37 @@
+.reactContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1.5% 20%;
+}
+
+.contentSection {
+  width: 60%;
+  color: rgb(12, 44, 93);
+}
+
+.contentSection h1 {
+  font-size: 2.4rem;
+}
+
+.contentSection p {
+  margin-top: 8px;
+  line-height: 1.1;
+  font-size: 1.3rem;
+  padding-right: 22%;
+}
+
+.imageSection img {
+  height: 130px;
+  width: 120px;
+}
+
+.dark {
+  background-color: rgb(2, 170, 202);
+}
+
+.light {
+  background-color: rgba(5, 189, 222);
+  flex-direction: row-reverse;
+}
