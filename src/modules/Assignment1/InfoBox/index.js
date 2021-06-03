@@ -21,7 +21,11 @@ function InfoBox() {
         </p>
       </div>
       <div className={"infoImage"}>
+<<<<<<< HEAD
         <img src={Image} alt={"infoImg"} height={"90%"} width={"70%"} />
+=======
+        <img src={Image} alt='infoImg' height='90%' width='70%' />
+>>>>>>> 01db9afb010a263cf5abe2192c868183963b6b92
       </div>
     </div>
   );

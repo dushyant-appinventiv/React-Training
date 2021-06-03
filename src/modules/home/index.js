@@ -18,8 +18,12 @@ class Home extends Component {
         <h1>{"Hello form Home"}</h1>
         {this.renderBox("First Container", "Click First", "")}
         {this.renderBox("Second Container", "CLick Second", "")}
+<<<<<<< HEAD
         <ReusableBox heading={"Third Container"} buttonHead={"Click Third"} />
         <ReusableBox heading={"Fourth Contianer"} buttonHead={"Click Fourth"} />
+=======
+        {this.renderBox("Third COntianer", "Click Third", "")}
+>>>>>>> 01db9afb010a263cf5abe2192c868183963b6b92
       </div>
     );
   }
