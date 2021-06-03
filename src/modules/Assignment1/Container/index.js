@@ -7,13 +7,13 @@ import WhiteBox from "../PricingBox/WhiteBox";
 
 function Container() {
   return (
-    <div className='mainContainer'>
-      <div className='leftSection'>
+    <div className={"mainContainer"}>
+      <div className={"leftSection"}>
         <InfoBox />
       </div>
-      <div className='rightSection'>
+      <div className={"rightSection"}>
         <Header />
-        <div className='priceSection'>
+        <div className={"priceSection"}>
           <WhiteBox />
           <PurpleBox />
         </div>

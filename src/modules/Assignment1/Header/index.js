@@ -5,11 +5,11 @@ function Header() {
   return (
     <div className={"headerContainer"}>
       <h1 className={"heading"}>
-        Start now your <span>free plan</span>
+        {"Start now your"} <span>{"free plan"}</span>
       </h1>
       <p className={"contactBox"}>
-        Are you a corporate?
-        <a href='www.google.com'> Contact us </a>
+        {"Are you a corporate?"}
+        <a href={"www.google.com"}> {"Contact us"} </a>
       </p>
     </div>
   );
