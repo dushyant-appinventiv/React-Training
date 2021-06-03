@@ -1,0 +1,32 @@
+.homeContainer {
+  width: 100vw;
+  height: 100vh;
+  background-color: silver;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+#h2Head {
+  color: red;
+}
+
+.itemContainer {
+  height: 100px;
+  width: 200px;
+  border: 1px solid red;
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
+}
+
+.itemContainer button {
+  width: auto;
+  font-size: 20px;
+  background-color: lightgreen;
+  border-radius: 15px;
+  padding: 8px 16px;
+}

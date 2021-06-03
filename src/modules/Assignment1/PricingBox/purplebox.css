@@ -1,0 +1,93 @@
+.purpleContainer {
+  background-color: rgba(68, 0, 177, 255);
+  color: white;
+  width: 420px;
+  height: 610px;
+  border-radius: 20px;
+  margin: 20px 20px 0px;
+  padding: 30px;
+}
+
+.containerHead {
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.purpleTitle {
+  font-weight: bolder;
+  font-size: 1.25rem;
+  position: relative;
+}
+
+.purpleTitle hr {
+  position: absolute;
+  bottom: 8px;
+  border: none;
+  border-radius: 5px;
+  height: 4px;
+  width: 24px;
+  background-color: white;
+}
+
+.purplePayType h3 {
+  font-size: 1.7rem;
+  font-weight: normal;
+  margin-top: 8px;
+  text-align: right;
+}
+
+.purplePayType {
+  font-size: 0.95rem;
+}
+
+.contentBody {
+  margin: 30px 0px 10px;
+  font-weight: 500;
+}
+
+.contentBody ul {
+  margin: 25px 0px 70px;
+  list-style: none;
+}
+
+.contentBody ul li {
+  display: flex;
+  margin-top: 25px;
+}
+
+.icon {
+  height: 100%;
+  width: fit-content;
+  padding: 3px;
+  margin-right: 20px;
+}
+
+.listItem {
+  padding-right: 50px;
+  line-height: 1.2;
+}
+
+.purpleFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.purpleFooter p {
+  font-size: 0.8rem;
+  font-weight: bolder;
+  margin-bottom: 22px;
+  cursor: pointer;
+}
+
+.purpleFooter button {
+  background-color: white;
+  color: rgb(47, 47, 47);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bolder;
+  padding: 20px 30px;
+  border-radius: 20px;
+}

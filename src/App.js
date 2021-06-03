@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Header from "./modules/Assignment2/header";
+import Footer from "./modules/Assignment2/footer";
+import ReactContainer from "./component/Assignment2/reactDesc";
+import { contentData } from "./data";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div className={"appWrapperAssignment2"}>
+        <Header />
+        {contentData.map((item) => (
+          <ReactContainer
+            key={item.id}
+            heading={item.heading}
+            content={item.content}
+            image={item.imgSrc}
+            imageAlt={item.alt}
+            theme={item.theme}
+          />
+        ))}
+        <Footer />
+      </div>
+    );
+  }
 }
 
 export default App;
