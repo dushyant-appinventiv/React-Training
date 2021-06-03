@@ -4,8 +4,8 @@ import Image from "./info-img.png";
 
 function InfoBox() {
   return (
-    <div className='infoContainer'>
-      <div className='content'>
+    <div className={"infoContainer"}>
+      <div className={"content"}>
         <h1>
           Save your <span>money now.</span>
         </h1>
@@ -18,7 +18,7 @@ function InfoBox() {
           with the Lite version for free.
         </p>
       </div>
-      <div className='infoImage'>
+      <div className={"infoImage"}>
         <img src={Image} alt='infoImg' height='90%' width='70%' />
       </div>
     </div>
