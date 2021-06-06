@@ -1,0 +1,52 @@
+@import "../../../sass/variables";
+
+.creditContainer {
+  padding: 3%;
+  width: 100%;
+  border-radius: 20px;
+  height: 200px;
+  box-shadow: 0 3px 16px 0 $grey-primary-1;
+}
+
+.creditBrand {
+  img {
+    height: 25px;
+    width: 80px;
+  }
+}
+
+.creditBody {
+  padding-left: 4%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 18px;
+  margin: 10% 0%;
+  color: $grey-secondary;
+}
+
+.creditFooter {
+  padding-left: 4%;
+  display: flex;
+  justify-content: space-between;
+  font-family: $nunito-sans;
+  font-size: 14px;
+
+  h4 {
+    color: $grey-primary-3;
+  }
+
+  p {
+    color: $grey-secondary;
+    margin: 2% 0%;
+    font-weight: 500;
+  }
+}
+
+.creditBlue {
+  background-color: $blue-primary-1;
+}
+
+.creditPink {
+  background-color: $pink-primary;
+}

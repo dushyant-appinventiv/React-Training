@@ -1,0 +1,115 @@
+@import "../../../sass/variables";
+
+.aboutDogecoinWrapper {
+  margin: 10% 0% 3%;
+  font-family: $rubik;
+}
+
+.aboutDogeContainer {
+  display: grid;
+  grid-template-columns: 20% 48% 20%;
+  gap: 1.5em;
+  justify-content: center;
+}
+
+.aboutImgDoge {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 250px;
+  border-radius: 15px;
+  box-shadow: 0 3px 10px 0 $grey-primary-1;
+
+  .aboutImgContent {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    img {
+      height: 25px;
+      width: 25px;
+    }
+  }
+}
+
+.aboutDogeDesc {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px 0 $grey-primary-1;
+  h1 {
+    font-weight: 600;
+    font-size: 35px;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 1.8;
+    font-family: $nunito-sans;
+    color: $grey-primary-2;
+    padding: 1% 6%;
+  }
+}
+
+.spendDogeContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  margin: 5% 0%;
+  height: 450px;
+
+  h1 {
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  p {
+    color: $grey-primary-2;
+    font-family: $nunito-sans;
+    font-weight: 500;
+    line-height: 1.8;
+    width: 55%;
+    font-size: 15px;
+  }
+}
+
+.spendImgContainer {
+  display: grid;
+  width: 80%;
+  align-items: center;
+  grid-template-columns: auto auto auto;
+  gap: 2%;
+  height: 250px;
+
+  .spendImgContent {
+    width: 100%;
+    height: fit-content;
+    img {
+      height: 200px;
+      width: 200px;
+      border-radius: 100%;
+      border-style: double;
+      border-width: 10px;
+      margin: 2%;
+      outline: none;
+      border-color: $grey-primary-1;
+    }
+
+    p {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      color: black;
+      width: 100%;
+      font-weight: 600;
+    }
+  }
+}

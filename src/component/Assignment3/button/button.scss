@@ -1,0 +1,25 @@
+@import "../../../sass/variables";
+
+button {
+  padding: 1.5% 6.5%;
+  border-radius: 50px;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 600;
+  font-family: $nunito-sans;
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.green {
+  background-color: $green-primary-2;
+  &:hover {
+    background-color: $green-primary;
+  }
+}
+
+.blue {
+  background-color: $blue-secondary;
+}
