@@ -10,6 +10,8 @@ import Lock from "./images3/lock.svg";
 import Comments from "./images3/comments.svg";
 import Network from "./images3/network.svg";
 import Peers from "./images3/peers.svg";
+import DownBlue from "./images3/downBlue.svg";
+import UpGreen from "./images3/upGreen.svg";
 
 export const blueSection = [
   {
@@ -18,6 +20,10 @@ export const blueSection = [
     altText: "blue-tick-img",
     title: "Get verified quickly",
     desc: "Just sign up, upload your verification document and open your account",
+    arrowImg: "",
+    arrowAlt: "",
+    timerHead: "",
+    timerText: "",
   },
   {
     id: "2",
@@ -25,6 +31,10 @@ export const blueSection = [
     altText: "blue-wallet-img",
     title: "Buy Dogecoin",
     desc: "Select which coin you would like to buy and how much you would like to purchase",
+    arrowImg: DownBlue,
+    arrowAlt: "download-icon",
+    timerHead: "",
+    timerText: "",
   },
   {
     id: "3",
@@ -32,6 +42,10 @@ export const blueSection = [
     altText: "blue-time-img",
     title: "Receive Coins",
     desc: "We will send your coins to your wallet within 15 min of payment approval",
+    arrowImg: "",
+    arrowAlt: "",
+    timerHead: "15",
+    timerText: "MIN",
   },
 ];
 
@@ -42,6 +56,10 @@ export const greenSection = [
     altText: "green-tick-img",
     title: "Get verified quickly",
     desc: "Just sign up, upload your verification document and open your account",
+    arrowImg: "",
+    arrowAlt: "",
+    timerHead: "",
+    timerText: "",
   },
   {
     id: "2",
@@ -49,6 +67,10 @@ export const greenSection = [
     altText: "green-wallet-img",
     title: "Sell Dogecoin",
     desc: "Select Dogecoin under the 'sell' tab and decide how much you want to sell",
+    arrowImg: UpGreen,
+    arrowAlt: "upload-icon",
+    timerHead: "",
+    timerText: "",
   },
   {
     id: "3",
@@ -56,6 +78,9 @@ export const greenSection = [
     altText: "green-time-img",
     title: "Receive Cash",
     desc: "We will send your coins to your wallet within 15 min of payment approval",
+    arrowImg: "",
+    timerHead: "15",
+    timerText: "MIN",
   },
 ];
 

@@ -21,6 +21,11 @@ function Dogecoin() {
                 heading={item.title}
                 content={item.desc}
                 number={item.id}
+                arrowImg={item.arrowImg}
+                arrowAlt={item.arrowAlt}
+                timerText={item.timerText}
+                timerHead={item.timerHead}
+                timerColor={"timerBlue"}
               />
             ))}
           </div>
@@ -39,6 +44,11 @@ function Dogecoin() {
                 heading={item.title}
                 content={item.desc}
                 number={item.id}
+                arrowImg={item.arrowImg}
+                arrowAlt={item.arrowAlt}
+                timerText={item.timerText}
+                timerHead={item.timerHead}
+                timerColor={"timerGreen"}
               />
             ))}
           </div>
