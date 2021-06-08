@@ -1,0 +1,92 @@
+@import "../../../sass/variables";
+
+.supportHeadContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 80px;
+  padding: 2% 10%;
+}
+
+.supportHamburger {
+  border: none;
+  border-radius: 100%;
+  background-color: white;
+  box-shadow: 0 8px 8px 0 $grey-primary-1;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  .line {
+    position: relative;
+    border-radius: 20px;
+    outline: none;
+    width: 20px;
+    height: 3px;
+    background-color: $cerulean;
+
+    &::after,
+    &::before {
+      border-radius: 20px;
+      content: "";
+      border: none;
+      outline: none;
+      width: 20px;
+      height: 3px;
+      position: absolute;
+      background-color: $cerulean;
+    }
+
+    &::after {
+      top: 260%;
+      background-color: green;
+    }
+
+    &::before {
+      bottom: 260%;
+      background-color: red;
+    }
+  }
+}
+
+.supportOptionSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 75%;
+  img {
+    height: 28px;
+    width: 120px;
+  }
+
+  .supportOptions {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    img {
+      border-radius: 30%;
+      height: 25%;
+      width: 25%;
+    }
+  }
+}
+
+// BrandLogo size for small devices
+@media screen and (max-width: 375px) {
+  .supportOptionSection {
+    img {
+      height: 20px;
+      width: 80px;
+    }
+  }
+}
+
+// For widths above Tablet size
+@media screen and (min-width: 800px) {
+  .supportHeadContainer {
+    display: none;
+  }
+}

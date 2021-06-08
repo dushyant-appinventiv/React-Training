@@ -1,0 +1,54 @@
+@import "../../../sass/variables";
+
+aside {
+  width: 100%;
+  display: none;
+  font-family: $rubik;
+  .supportAsideHead {
+    padding: 5% 10%;
+    margin: 0% 0% 3%;
+    img {
+      height: 30px;
+      width: 120px;
+    }
+  }
+
+  .supportAsideContent {
+    h3 {
+      font-family: $nunito-sans;
+      color: $grey-primary-2;
+      font-size: 12px;
+      padding-left: 10%;
+      font-weight: 700;
+    }
+    ul {
+      list-style: none;
+      margin-top: 5%;
+
+      li {
+        .listItem {
+          padding: 4% 3% 4% 10%;
+          height: 100%;
+          border: none;
+          border-radius: 0px 20px 20px 0px;
+          width: 80%;
+          font-size: 15px;
+          font-weight: 700;
+          color: #3a4e6f;
+          text-transform: capitalize;
+          line-height: 22px;
+
+          &:hover {
+            background-color: $blue-primary-3;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  aside {
+    display: block;
+  }
+}

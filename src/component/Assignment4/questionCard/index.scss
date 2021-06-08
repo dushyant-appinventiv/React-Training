@@ -1,0 +1,81 @@
+@import "../../../sass/variables";
+
+.supportQuestionCard {
+  font-family: $nunito-sans;
+  height: 350px;
+  width: 100%;
+  padding: 8%;
+  // FOR FLEX
+  // width: 300px;
+  // margin: 2% 0%;
+  // padding: 5%;
+  // FLEX OVER
+  border: none;
+  border-radius: 30px;
+  background-color: #ffffff;
+  box-shadow: 0 7px 15px 0 $grey-primary-1;
+
+  .supportQuestionContent {
+    height: 100%;
+    widows: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  h2 {
+    font-size: 18px;
+    letter-spacing: 1px;
+    line-height: 1;
+    padding: 0px;
+    font-weight: 600;
+  }
+
+  a {
+    text-decoration: none;
+    color: $green-primary-2;
+    font-size: 16px;
+    margin-top: 4%;
+    line-height: 1.57;
+
+    &:hover {
+      color: $dark-lime-green;
+    }
+  }
+
+  .supportQuestionList {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 78%;
+    margin: 2% 0%;
+    a {
+      line-height: 1.48;
+      font-size: 14px;
+      color: $cerulean;
+      margin: 3% 0%;
+
+      &:hover {
+        color: $azure;
+      }
+    }
+  }
+}
+
+// @media screen and (min-width: 425px) {
+//   .supportQuestionCard {
+//     padding: 6%;
+//   }
+// }
+
+// @media screen and (min-width: 768px) {
+//   .supportQuestionCard {
+//     padding: 6%;
+//   }
+// }
+
+// @media screen and (min-width: 1000px) {
+//   .supportQuestionCard {
+//     padding: 8%;
+//   }
+// }

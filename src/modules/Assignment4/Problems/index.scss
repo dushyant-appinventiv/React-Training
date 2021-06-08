@@ -1,0 +1,124 @@
+@import "../../../sass/variables";
+
+.supportProblemsWrapper {
+  width: 100%;
+  padding: 0% 10% 4%;
+
+  .supportProblemHeader {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    margin: 4% 0%;
+    h2 {
+      text-align: left;
+      padding-left: 4%;
+      display: flex;
+      font-size: 32px;
+      align-items: center;
+      font-family: $rubik;
+      font-weight: bold;
+    }
+  }
+
+  .supportOtherOptions {
+    display: none;
+  }
+
+  input {
+    width: 98%;
+    margin: 4% 2% 2%;
+    padding: 2% 4%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-family: $nunito-sans;
+    color: $grey-secondary;
+    border-radius: 20px;
+    box-shadow: 0 5px 10px 0px $blue-primary-2;
+
+    &::placeholder {
+      color: $grey-primary-1;
+      font-family: $nunito-sans;
+      font-size: 16px;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+.gridProblemsContainer {
+  display: grid;
+  width: 100%;
+  grid-template-columns: auto;
+  justify-content: center;
+  gap: 1%;
+}
+
+.flexProblemsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// For Tablet sized widths
+@media screen and (min-width: 600px) {
+  .gridProblemsContainer {
+    grid-template-columns: auto auto;
+    gap: 2%;
+  }
+
+  .flexProblemsContainer {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+}
+
+// For Laptop sized Screens
+@media screen and (min-width: 800px) {
+  .gridProblemsContainer {
+    grid-template-columns: 300px 300px 300px;
+  }
+
+  .supportProblemsWrapper {
+    input {
+      padding: 1.5% 3%;
+    }
+
+    .supportProblemHeader {
+      margin: 0%;
+      padding: 3% 0% 2%;
+    }
+
+    .supportOtherOptions {
+      display: flex;
+
+      select {
+        cursor: pointer;
+        border: none;
+        font-size: 14px;
+        outline: none;
+        background-color: transparent;
+        margin-right: 25%;
+      }
+
+      button {
+        padding: 3% 0%;
+        width: 200px;
+        height: 42px;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 600;
+        font-family: $nunito-sans;
+        cursor: pointer;
+        background-color: $green-primary-2;
+
+        &:hover {
+          background-color: $green-primary;
+        }
+      }
+    }
+  }
+}
