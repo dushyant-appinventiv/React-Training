@@ -1,9 +1,11 @@
 import React from "react";
 import "./App.css";
 
-import Header from "./modules/Assignment4/Header";
-import Problems from "./modules/Assignment4/Problems";
-import SideBar from "./modules/Assignment4/Sidebar";
+import MaterialLayout from "./modules/Assignment5/mainPage";
+
+// import Header from "./modules/Assignment4/Header";
+// import Problems from "./modules/Assignment4/Problems";
+// import SideBar from "./modules/Assignment4/Sidebar";
 
 // ASSIGNEMENT-3
 // import Footer from "./modules/Assignment3/Footer";
@@ -17,7 +19,7 @@ import SideBar from "./modules/Assignment4/Sidebar";
 class App extends React.Component {
   render() {
     return (
-      <div className={"appWrapperAssignment4"}>
+      <div className={"appWrapperAssignment3"}>
         {/* ASSIGNMENT 3 */}
         {/* <CoverPage />
         <CardsSection />
@@ -38,13 +40,14 @@ class App extends React.Component {
           points={bigData[1].points}
         />
         <Footer /> */}
-        <div>
+        {/* <div>
           <SideBar />
         </div>
         <div>
           <Header />
           <Problems />
-        </div>
+        </div> */}
+        <MaterialLayout />
       </div>
     );
   }

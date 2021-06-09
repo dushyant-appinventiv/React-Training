@@ -21,7 +21,7 @@ function Problem() {
         </div>
       </div>
       <input type={"text"} placeholder={"Search Xcoins Support"} />
-      <div className={"gridProblemsContainer"}>
+      <div className={"flexProblemsContainer"}>
         {supportQuestions.map((item) => (
           <QuestionCard
             key={item.id}
