@@ -40,6 +40,7 @@ const useStyles = makeStyles({
   listStyle: {
     backgroundColor: "#1465C0",
     height: "100%",
+    position: "fixed",
     padding: 0,
   },
   tooltipStyle: {
@@ -49,7 +50,7 @@ const useStyles = makeStyles({
     padding: "12px",
   },
 });
-
+const delay = 100;
 function Sidebar() {
   const classes = useStyles();
   return (
@@ -64,6 +65,7 @@ function Sidebar() {
           classes={{ tooltip: classes.tooltipStyle }}
           placement={"right"}
           title={"Buy Monero"}
+          leaveDelay={delay}
         >
           <ListItem>
             <ListItemIcon className={classes.listIconStyle}>
@@ -72,6 +74,7 @@ function Sidebar() {
           </ListItem>
         </Tooltip>
         <Tooltip
+          leaveDelay={delay}
           classes={{ tooltip: classes.tooltipStyle }}
           title={"Sell Monero"}
           placement={"right"}
@@ -83,6 +86,7 @@ function Sidebar() {
           </ListItem>
         </Tooltip>
         <Tooltip
+          leaveDelay={delay}
           classes={{ tooltip: classes.tooltipStyle }}
           title={"Trade BTC & Options"}
           placement={"right"}
@@ -94,6 +98,7 @@ function Sidebar() {
           </ListItem>
         </Tooltip>
         <Tooltip
+          leaveDelay={delay}
           classes={{ tooltip: classes.tooltipStyle }}
           title={"Getting Started"}
           placement={"right"}
@@ -105,6 +110,7 @@ function Sidebar() {
           </ListItem>
         </Tooltip>
         <Tooltip
+          leaveDelay={delay}
           classes={{ tooltip: classes.tooltipStyle }}
           title={"Post an AD"}
           placement={"right"}
@@ -116,6 +122,7 @@ function Sidebar() {
           </ListItem>
         </Tooltip>
         <Tooltip
+          leaveDelay={delay}
           classes={{ tooltip: classes.tooltipStyle }}
           title={"Forums"}
           placement={"right"}
@@ -127,6 +134,7 @@ function Sidebar() {
           </ListItem>
         </Tooltip>
         <Tooltip
+          leaveDelay={delay}
           classes={{ tooltip: classes.tooltipStyle }}
           title={"FAQ"}
           placement={"right"}
@@ -138,6 +146,7 @@ function Sidebar() {
           </ListItem>
         </Tooltip>
         <Tooltip
+          leaveDelay={delay}
           classes={{ tooltip: classes.tooltipStyle }}
           title={"About"}
           placement={"right"}
@@ -149,6 +158,7 @@ function Sidebar() {
           </ListItem>
         </Tooltip>
         <Tooltip
+          leaveDelay={delay}
           classes={{ tooltip: classes.tooltipStyle }}
           title={"Forums"}
           placement={"right"}
@@ -160,6 +170,7 @@ function Sidebar() {
           </ListItem>
         </Tooltip>
         <Tooltip
+          leaveDelay={delay}
           classes={{ tooltip: classes.tooltipStyle }}
           title={"FAQ"}
           placement={"right"}
@@ -171,6 +182,7 @@ function Sidebar() {
           </ListItem>
         </Tooltip>
         <Tooltip
+          leaveDelay={delay}
           classes={{ tooltip: classes.tooltipStyle }}
           title={"About"}
           placement={"right"}
