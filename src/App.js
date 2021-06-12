@@ -2,7 +2,8 @@ import React from "react";
 import "./App.css";
 
 // ASSIGNEMENT-6
-import Form from "./component/Assignment6/forms";
+import MovieHomeScreen from "./modules/Assignment6/MovieHomeScreen";
+import Login from "./modules/Assignment6/LoginScreen";
 
 // ASSIGNMENT-5
 // import MaterialLayout from "./modules/Assignment5/mainPage";
@@ -53,7 +54,7 @@ class App extends React.Component {
           <Header />
           <Problems />
         </div> */}
-        <Form />
+        <Login />
       </div>
     );
   }

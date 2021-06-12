@@ -67,6 +67,7 @@ function Forms(props) {
             id={"email"}
             onBlur={formik.handleBlur}
             name={"email"}
+            type={"email"}
             value={formik.values.email}
             variant={"outlined"}
             onChange={formik.handleChange}
