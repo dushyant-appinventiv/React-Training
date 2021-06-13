@@ -2,8 +2,10 @@ import React from "react";
 import "./App.css";
 
 // ASSIGNEMENT-6
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import MovieHomeScreen from "./modules/Assignment6/MovieHomeScreen";
 import Login from "./modules/Assignment6/LoginScreen";
+import SignIn from "./modules/Assignment6/SignupScreen";
 
 // ASSIGNMENT-5
 // import MaterialLayout from "./modules/Assignment5/mainPage";
@@ -54,7 +56,19 @@ class App extends React.Component {
           <Header />
           <Problems />
         </div> */}
-        <Login />
+        <Router>
+          <Switch>
+            <Route exact path={"/"}>
+              <SignIn />
+            </Route>
+            <Route exact path={"/login"}>
+              <Login />
+            </Route>
+            <Route exact path={"/movies"}>
+              <MovieHomeScreen />
+            </Route>
+          </Switch>
+        </Router>
       </div>
     );
   }

@@ -1,7 +1,14 @@
 import React from "react";
 import { useFormik } from "formik";
 import { Box, Paper } from "@material-ui/core";
-import { Container, Typography, TextField, Button } from "@material-ui/core";
+import {
+  Container,
+  Typography,
+  TextField,
+  Button,
+  Link,
+} from "@material-ui/core";
+import { useHistory } from "react-router-dom";
 
 const validate = (values) => {
   const errors = {};
@@ -19,7 +26,22 @@ const validate = (values) => {
   return errors;
 };
 
+const entryEmail = "default@gmail.com";
+const entryPassword = "12345";
+console.log("Email and pwd : " + entryEmail + " " + entryPassword);
+
 function Forms(props) {
+  let history = useHistory();
+
+  function loginSubmit() {
+    if (
+      entryEmail === formik.values.email &&
+      entryPassword === formik.values.password
+    ) {
+      history.push("/movies");
+    }
+  }
+
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -28,7 +50,10 @@ function Forms(props) {
     },
     validate,
     onSubmit: (values) => {
-      console.log(values.email);
+      console.log("On submit called");
+      // localStorage.setItem("email", values.email);
+      // localStorage.setItem("pwd", values.password);
+      history.push("/login");
     },
   });
 
@@ -54,7 +79,7 @@ function Forms(props) {
               type={"string"}
               variant={"outlined"}
               value={formik.values.username}
-              helperText={formik.errors.username && formik.touched.username}
+              helperText={formik.touched.username && formik.errors.username}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               label={"Username"}
@@ -71,7 +96,7 @@ function Forms(props) {
             value={formik.values.email}
             variant={"outlined"}
             onChange={formik.handleChange}
-            helperText={formik.errors.email && formik.touched.email}
+            helperText={formik.touched.email && formik.errors.email}
             label={"Email"}
           />
           <TextField
@@ -88,10 +113,22 @@ function Forms(props) {
             error={formik.touched.password && Boolean(formik.errors.password)}
             helperText={formik.touched.password && formik.errors.password}
           />
+          {props.type === "login" ? (
+            <Link
+              align={"left"}
+              href={"/"}
+              color={"secondary"}
+              variant={"subtitle2"}
+            >
+              {"Sign In"}
+            </Link>
+          ) : null}
           <Button
             fullWidth
+            disabled={false}
             type={"submit"}
             size={"large"}
+            onClick={props.type === "login" ? loginSubmit : null}
             variant={"contained"}
             color={"primary"}
           >
