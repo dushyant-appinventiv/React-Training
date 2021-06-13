@@ -43,3 +43,12 @@
     grid-template-columns: 22% 78%;
   }
 }
+
+.appWrapperAssignment6 {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

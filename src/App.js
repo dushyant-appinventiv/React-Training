@@ -1,9 +1,19 @@
 import React from "react";
 import "./App.css";
 
-import Header from "./modules/Assignment4/Header";
-import Problems from "./modules/Assignment4/Problems";
-import SideBar from "./modules/Assignment4/Sidebar";
+// ASSIGNEMENT-6
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import MovieHomeScreen from "./modules/Assignment6/MovieHomeScreen";
+import Login from "./modules/Assignment6/LoginScreen";
+import SignIn from "./modules/Assignment6/SignupScreen";
+
+// ASSIGNMENT-5
+// import MaterialLayout from "./modules/Assignment5/mainPage";
+
+// ASSIGNMENT-4
+// import Header from "./modules/Assignment4/Header";
+// import Problems from "./modules/Assignment4/Problems";
+// import SideBar from "./modules/Assignment4/Sidebar";
 
 // ASSIGNEMENT-3
 // import Footer from "./modules/Assignment3/Footer";
@@ -17,7 +27,7 @@ import SideBar from "./modules/Assignment4/Sidebar";
 class App extends React.Component {
   render() {
     return (
-      <div className={"appWrapperAssignment4"}>
+      <div className={"appWrapperAssignment6"}>
         {/* ASSIGNMENT 3 */}
         {/* <CoverPage />
         <CardsSection />
@@ -38,13 +48,27 @@ class App extends React.Component {
           points={bigData[1].points}
         />
         <Footer /> */}
-        <div>
+        {/* ASSIGNEMNT 5 */}
+        {/* <div>
           <SideBar />
         </div>
         <div>
           <Header />
           <Problems />
-        </div>
+        </div> */}
+        <Router>
+          <Switch>
+            <Route exact path={"/"}>
+              <SignIn />
+            </Route>
+            <Route exact path={"/login"}>
+              <Login />
+            </Route>
+            <Route exact path={"/movies"}>
+              <MovieHomeScreen />
+            </Route>
+          </Switch>
+        </Router>
       </div>
     );
   }

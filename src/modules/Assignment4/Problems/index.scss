@@ -55,8 +55,9 @@
 
 .flexProblemsContainer {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  //   flex-direction: column;
+  //   align-items: center;
+  flex-wrap: wrap;
 }
 
 // For Tablet sized widths
@@ -66,11 +67,10 @@
     gap: 2%;
   }
 
-  .flexProblemsContainer {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-  }
+  //   .flexProblemsContainer {
+  //     flex-direction: row;
+  //     justify-content: space-evenly;
+  //   }
 }
 
 // For Laptop sized Screens
