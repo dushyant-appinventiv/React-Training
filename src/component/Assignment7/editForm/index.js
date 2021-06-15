@@ -1,5 +1,5 @@
 import { Box, Button, Paper, TextField, makeStyles } from "@material-ui/core";
-import React, { useEffect, memo } from "react";
+import React, { memo } from "react";
 import { useState } from "react";
 
 const useStyles = makeStyles({
@@ -20,7 +20,7 @@ let carsData = [];
 bikesData = JSON.parse(window.localStorage.getItem("bikesDB"));
 carsData = JSON.parse(window.localStorage.getItem("carsDB"));
 
-function EditForm({ category, data }) {
+function EditForm({ category, data, setVehicleData }) {
   const classes = useStyles();
 
   const [vehicleName, setName] = useState(data.name);
@@ -45,6 +45,8 @@ function EditForm({ category, data }) {
       const index = bikesData.findIndex((item) => item.id === data.id);
       bikesData.splice(index, 1, data);
       window.localStorage.setItem("bikesDB", JSON.stringify(bikesData));
+      window.localStorage.setItem("data", JSON.stringify(bikesData[index]));
+      setVehicleData(bikesData[index]);
     } else {
       const editObject = {
         ...data,
@@ -59,6 +61,8 @@ function EditForm({ category, data }) {
       console.log(index);
       carsData.splice(index, 1, data);
       window.localStorage.setItem("carsDB", JSON.stringify(carsData));
+      window.localStorage.setItem("data", JSON.stringify(carsData[index]));
+      setVehicleData(carsData[index]);
     }
   }
 

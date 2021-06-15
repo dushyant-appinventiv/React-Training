@@ -1,43 +1,8 @@
 import { Paper, Typography, Box } from "@material-ui/core";
-import React, { memo, useEffect, useState } from "react";
-
-// let bikesData = [];
-// let carsData = [];
+import React, { useEffect, useState } from "react";
 
 function DisplayDetails({ category, data }) {
-  const [commonDB, setCommonDB] = useState({});
-
-  const [bikeDB, setBikeDB] = useState([]);
-  const [carsDB, setCarsDB] = useState([]);
-  const [firstRender, setFirstRender] = useState(false);
-
-  useEffect(() => {
-    setBikeDB(JSON.parse(window.localStorage.getItem("bikesDB")));
-    setCarsDB(JSON.parse(window.localStorage.getItem("carsDB")));
-    setCommonDB(data);
-    setFirstRender(true);
-  }, [
-    window.localStorage.getItem("bikesDB"),
-    window.localStorage.getItem("carsDB"),
-  ]);
-
-  //   useEffect(() => {
-  //     bikesData = ;JSON.parse(window.localStorage.getItem("bikesDB"))
-  //     carsData = JSON.parse(window.localStorage.getItem("carsDB"));
-  //   }, []);
-
-  useEffect(() => {
-    if (firstRender) {
-      console.log("retriggered");
-      if (category === "bikes") {
-        const index = bikeDB.findIndex((item) => item.id === data.id);
-        setCommonDB(bikeDB[index]);
-      } else {
-        const index = carsDB.findIndex((item) => item.id === data.id);
-        setCommonDB(carsDB[index]);
-      }
-    }
-  }, [bikeDB, carsDB]);
+  const [commonDB, setCommonDB] = useState(data);
 
   return (
     <Box margin={"5% 0% 2%"} maxWidth={500} padding={10} component={Paper}>
@@ -88,4 +53,4 @@ function DisplayDetails({ category, data }) {
   );
 }
 
-export default memo(DisplayDetails);
+export default DisplayDetails;
