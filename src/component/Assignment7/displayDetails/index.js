@@ -4,6 +4,10 @@ import React, { useEffect, useState } from "react";
 function DisplayDetails({ category, data }) {
   const [commonDB, setCommonDB] = useState(data);
 
+  useEffect(() => {
+    setCommonDB(data);
+  }, [data]);
+
   return (
     <Box margin={"5% 0% 2%"} maxWidth={500} padding={10} component={Paper}>
       <Typography gutterBottom color={"secondary"} variant={"h5"}>
