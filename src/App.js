@@ -1,11 +1,15 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 
+// ASSIGNMENT 7
+import HomeScreen from "./modules/Assignment7/HomeScreen";
+import EditScreen from "./modules/Assignment7/EditScreen";
+
 // ASSIGNEMENT-6
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import MovieHomeScreen from "./modules/Assignment6/MovieHomeScreen";
-import Login from "./modules/Assignment6/LoginScreen";
-import SignIn from "./modules/Assignment6/SignupScreen";
+// import MovieHomeScreen from "./modules/Assignment6/MovieHomeScreen";
+// import Login from "./modules/Assignment6/LoginScreen";
+// import SignIn from "./modules/Assignment6/SignupScreen";
 
 // ASSIGNMENT-5
 // import MaterialLayout from "./modules/Assignment5/mainPage";
@@ -56,7 +60,9 @@ class App extends React.Component {
           <Header />
           <Problems />
         </div> */}
-        <Router>
+
+        {/* ASSIGNMENT 6 */}
+        {/* <Router>
           <Switch>
             <Route exact path={"/"}>
               <SignIn />
@@ -66,6 +72,16 @@ class App extends React.Component {
             </Route>
             <Route exact path={"/movies"}>
               <MovieHomeScreen />
+            </Route>
+          </Switch>
+        </Router> */}
+        <Router>
+          <Switch>
+            <Route exact path={"/"}>
+              <HomeScreen />
+            </Route>
+            <Route exact path={"/editPage"}>
+              <EditScreen />
             </Route>
           </Switch>
         </Router>
