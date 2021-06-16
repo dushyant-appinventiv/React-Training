@@ -1,10 +1,13 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 
+// ASSIGNMENT 8
+import HomeScreen from "./modules/Assignment8/HomePage";
+
 // ASSIGNMENT 7
-import HomeScreen from "./modules/Assignment7/HomeScreen";
-import EditScreen from "./modules/Assignment7/EditScreen";
+// import HomeScreen from "./modules/Assignment7/HomeScreen";
+// import EditScreen from "./modules/Assignment7/EditScreen";
 
 // ASSIGNEMENT-6
 // import MovieHomeScreen from "./modules/Assignment6/MovieHomeScreen";
@@ -75,7 +78,9 @@ class App extends React.Component {
             </Route>
           </Switch>
         </Router> */}
-        <Router>
+
+        {/* ASSIGNMENT 7 */}
+        {/* <Router>
           <Switch>
             <Route exact path={"/"}>
               <HomeScreen />
@@ -84,7 +89,9 @@ class App extends React.Component {
               <EditScreen />
             </Route>
           </Switch>
-        </Router>
+        </Router> */}
+
+        <HomeScreen />
       </div>
     );
   }
