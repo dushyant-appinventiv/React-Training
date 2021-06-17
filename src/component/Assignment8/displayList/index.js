@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import DisplayModal from "../displayModal";
 import {
   TableBody,
   Button,
@@ -44,7 +43,7 @@ let filterArray = [];
 
 function DisplayList({ data, setModal, search }) {
   const classes = useStyles();
-  const [searchString, setSearchString] = useState(search);
+  const [searchString, setSearchString] = useState("");
 
   useEffect(() => {
     setSearchString(search);
@@ -63,6 +62,38 @@ function DisplayList({ data, setModal, search }) {
       id: index,
       type: "delete",
     });
+
+  const filterData = () => {
+    const filterData = data.filter((item) =>
+      item.firstName.toLowerCase().includes(searchString.toLowerCase())
+    );
+
+    return filterData?.map((item) => (
+      <TableRow key={item.id} hover>
+        <TableCell> {item.firstName} </TableCell>
+        <TableCell> {item.lastName} </TableCell>
+        <TableCell> {item.emailID} </TableCell>
+        <TableCell> {item.location} </TableCell>
+        <TableCell className={classes.btnCellStyle} align={"center"}>
+          <Button
+            className={classes.editBtnStyle}
+            variant={"contained"}
+            onClick={() => handleEditClick(item.id)}
+          >
+            {"Edit"}
+          </Button>
+          <Button
+            variant={"contained"}
+            className={classes.deleteBtnStyle}
+            onClick={() => handleDeleteClick(item.id)}
+          >
+            {"Delete"}
+          </Button>
+        </TableCell>
+      </TableRow>
+    ));
+  };
+
   return (
     <>
       <TableContainer component={Paper}>
@@ -105,37 +136,7 @@ function DisplayList({ data, setModal, search }) {
                     </TableCell>
                   </TableRow>
                 ))
-              : (filterArray = data.filter(
-                  (item) => item.firstName === searchString
-                ))(
-                  filterArray?.map((item) => (
-                    <TableRow key={item.id} hover>
-                      <TableCell> {item.firstName} </TableCell>
-                      <TableCell> {item.lastName} </TableCell>
-                      <TableCell> {item.emailID} </TableCell>
-                      <TableCell> {item.location} </TableCell>
-                      <TableCell
-                        className={classes.btnCellStyle}
-                        align={"center"}
-                      >
-                        <Button
-                          className={classes.editBtnStyle}
-                          variant={"contained"}
-                          onClick={() => handleEditClick(item.id)}
-                        >
-                          {"Edit"}
-                        </Button>
-                        <Button
-                          variant={"contained"}
-                          className={classes.deleteBtnStyle}
-                          onClick={() => handleDeleteClick(item.id)}
-                        >
-                          {"Delete"}
-                        </Button>
-                      </TableCell>
-                    </TableRow>
-                  ))
-                )}
+              : filterData()}
           </TableBody>
         </Table>
       </TableContainer>

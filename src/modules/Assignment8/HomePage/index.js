@@ -34,7 +34,6 @@ const initialValues = {
 
 function HomeScreen() {
   const classes = useStyles();
-  //   const [errors, setErrors] = useState({});
   const [database, setDatabase] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [modalVales, setModalValues] = useState({
@@ -42,7 +41,8 @@ function HomeScreen() {
     id: "",
     status: false,
   });
-
+  console.log("Database: ", database);
+  console.log("Modal Values :", modalVales);
   return (
     <Container className={classes.flexColCenter}>
       <Box margin={10} padding={2} maxWidth={500} component={Paper}>
@@ -73,7 +73,6 @@ function HomeScreen() {
         data={database}
         search={searchText}
         setModal={setModalValues}
-        // updateDB={setDatabase}
       />
     </Container>
   );
