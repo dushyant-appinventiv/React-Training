@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { makeStyles, Button, TextField, Box, Paper } from "@material-ui/core";
+import { makeStyles, Button, TextField } from "@material-ui/core";
 import { nanoid } from "nanoid";
 
 function Validation(values) {
@@ -49,7 +49,7 @@ const useStyles = makeStyles({
   },
 });
 
-function DisplayFrom({ data, updateDatabase, initialSet, status }) {
+function DisplayFrom({ data, updateDatabase, initialSet, status, setModal }) {
   const classes = useStyles();
   const [errors, setErrors] = useState({});
   const [values, setValues] = useState(initialSet);
@@ -58,101 +58,112 @@ function DisplayFrom({ data, updateDatabase, initialSet, status }) {
     setErrors(Validation(values));
   }, [values]);
 
-  function handleSubmit(e) {
+  function handleAddSubmit(e) {
     e.preventDefault();
     setErrors(Validation(values));
-    if (status === "add") {
-      const { fName, lName, address, email, password } = values;
-      const updateObj = {
-        id: nanoid(),
-        firstName: fName,
-        lastName: lName,
-        emailID: email,
-        pwd: password,
-        location: address,
-      };
-      setValues(initialSet);
-      let updateArray = [...data];
-      updateArray.splice(0, 0, updateObj);
-      updateDatabase(updateArray);
-    } else if (status === "edit") {
-      const { id, fName, lName, address, email, password } = values;
-      const index = data.findIndex((item) => item.id === id);
-      const updateObj = {
-        id: id,
-        firstName: fName,
-        lastName: lName,
-        emailID: email,
-        pwd: password,
-        location: address,
-      };
-      let updateArray = data;
-      updateArray.splice(index, 0, updateObj);
-      updateDatabase(updateArray);
-    }
+    const { fName, lName, address, email, password } = values;
+    const updateObj = {
+      id: nanoid(),
+      firstName: fName,
+      lastName: lName,
+      emailID: email,
+      pwd: password,
+      location: address,
+    };
+    setValues(initialSet);
+    let updateArray = [...data];
+    updateArray.splice(0, 0, updateObj);
+    updateDatabase(updateArray);
+  }
+
+  function handleEditSubmit(e) {
+    e.preventDefault();
+    setErrors(Validation(values));
+    const { id, fName, lName, address, email, password } = values;
+    console.log("Edit object: ", values);
+    // const index = data.findIndex((item) => item.id === id);
+    // const updateObj = {
+    //   id: id,
+    //   firstName: fName,
+    //   lastName: lName,
+    //   emailID: email,
+    //   pwd: password,
+    //   location: address,
+    // };
+    // let updateArray = data;
+    // updateArray.splice(index, 1, updateObj);
+    updateDatabase(data.map((item) => (item.id === id ? values : item)));
+    setModal({
+      type: "",
+      id: "",
+      status: false,
+    });
   }
 
   return (
-    <Box margin={10} padding={2} maxWidth={500} component={Paper}>
-      <form onSubmit={(e) => handleSubmit(e)} className={classes.flexColCenter}>
-        <TextField
-          className={classes.inputFieldStyle}
-          label={"First Name"}
-          value={values.fName}
-          onChange={(e) => setValues({ ...values, fName: e.target.value })}
-          error={Boolean(errors.firstName)}
-          helperText={Boolean(errors.firstName) && errors.firstName}
-          variant={"outlined"}
-          color={"primary"}
-        />
-        <TextField
-          className={classes.inputFieldStyle}
-          label={"Last Name"}
-          name={"lName"}
-          value={values.lName}
-          onChange={(e) => setValues({ ...values, lName: e.target.value })}
-          error={Boolean(errors.lastName)}
-          helperText={Boolean(errors.lastName) && errors.lastName}
-          variant={"outlined"}
-          color={"primary"}
-        />
-        <TextField
-          className={classes.inputFieldStyle}
-          label={"Address"}
-          value={values.address}
-          onChange={(e) => setValues({ ...values, address: e.target.value })}
-          error={Boolean(errors.address)}
-          helperText={Boolean(errors.address) && errors.address}
-          variant={"outlined"}
-          color={"primary"}
-        />
-        <TextField
-          className={classes.inputFieldStyle}
-          label={"Email ID"}
-          name={"email"}
-          value={values.email}
-          onChange={(e) => setValues({ ...values, email: e.target.value })}
-          error={Boolean(errors.email)}
-          helperText={Boolean(errors.email) && errors.email}
-          variant={"outlined"}
-          color={"primary"}
-        />
-        <TextField
-          className={classes.inputFieldStyle}
-          label={"Password"}
-          type={"password"}
-          value={values.password}
-          onChange={(e) => setValues({ ...values, password: e.target.value })}
-          error={Boolean(errors.password)}
-          helperText={Boolean(errors.password) && errors.password}
-          variant={"outlined"}
-          color={"primary"}
-        />
-        <Button type={"submit"} color={"secondary"} variant={"contained"}>
-          {"ADD"}
-        </Button>
-      </form>
-    </Box>
+    <form
+      onSubmit={(e) => {
+        status === "edit" ? handleEditSubmit(e) : handleAddSubmit(e);
+      }}
+      className={classes.flexColCenter}
+    >
+      <TextField
+        className={classes.inputFieldStyle}
+        label={"First Name"}
+        value={values.fName}
+        onChange={(e) => setValues({ ...values, fName: e.target.value })}
+        error={Boolean(errors.firstName)}
+        helperText={Boolean(errors.firstName) && errors.firstName}
+        variant={"outlined"}
+        color={"primary"}
+      />
+      <TextField
+        className={classes.inputFieldStyle}
+        label={"Last Name"}
+        name={"lName"}
+        value={values.lName}
+        onChange={(e) => setValues({ ...values, lName: e.target.value })}
+        error={Boolean(errors.lastName)}
+        helperText={Boolean(errors.lastName) && errors.lastName}
+        variant={"outlined"}
+        color={"primary"}
+      />
+      <TextField
+        className={classes.inputFieldStyle}
+        label={"Address"}
+        value={values.address}
+        onChange={(e) => setValues({ ...values, address: e.target.value })}
+        error={Boolean(errors.address)}
+        helperText={Boolean(errors.address) && errors.address}
+        variant={"outlined"}
+        color={"primary"}
+      />
+      <TextField
+        className={classes.inputFieldStyle}
+        label={"Email ID"}
+        name={"email"}
+        value={values.email}
+        onChange={(e) => setValues({ ...values, email: e.target.value })}
+        error={Boolean(errors.email)}
+        helperText={Boolean(errors.email) && errors.email}
+        variant={"outlined"}
+        color={"primary"}
+      />
+      <TextField
+        className={classes.inputFieldStyle}
+        label={"Password"}
+        type={"password"}
+        value={values.password}
+        onChange={(e) => setValues({ ...values, password: e.target.value })}
+        error={Boolean(errors.password)}
+        helperText={Boolean(errors.password) && errors.password}
+        variant={"outlined"}
+        color={"primary"}
+      />
+      <Button type={"submit"} color={"secondary"} variant={"contained"}>
+        {status === "edit" ? "EDIT" : "ADD"}
+      </Button>
+    </form>
   );
 }
 

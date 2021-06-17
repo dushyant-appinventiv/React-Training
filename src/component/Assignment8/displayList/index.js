@@ -1,5 +1,5 @@
-import React from "react";
-import DisplayModal from "../displayModal";
+import React, { useState, useEffect } from "react";
+// import DisplayModal from "../displayModal";
 import {
   TableBody,
   Button,
@@ -40,29 +40,29 @@ const useStyles = makeStyles({
   },
 });
 
-function DisplayList({ data, updateDB }) {
+let filterArray = [];
+
+function DisplayList({ data, setModal, search }) {
   const classes = useStyles();
+  const [searchString, setSearchString] = useState(search);
 
-  const handleEditClick = (index) => (
-    <DisplayModal
-      status={true}
-      type={"edit"}
-      database={data}
-      id={index}
-      setDB={updateDB}
-    />
-  );
+  useEffect(() => {
+    setSearchString(search);
+  }, [search]);
 
-  const handleDeleteClick = (index) => (
-    <DisplayModal
-      status={true}
-      type={"delete"}
-      database={data}
-      id={index}
-      setDB={updateDB}
-    />
-  );
+  const handleEditClick = (index) =>
+    setModal({
+      status: true,
+      id: index,
+      type: "edit",
+    });
 
+  const handleDeleteClick = (index) =>
+    setModal({
+      status: true,
+      id: index,
+      type: "delete",
+    });
   return (
     <>
       <TableContainer component={Paper}>
@@ -73,34 +73,69 @@ function DisplayList({ data, updateDB }) {
               <TableCell variant={"head"}> {"Last Name"} </TableCell>
               <TableCell variant={"head"}> {"Email ID"} </TableCell>
               <TableCell variant={"head"}> {"Address"} </TableCell>
-              <TableCell variant={"head"}> </TableCell>
+              <TableCell variant={"head"} />
             </TableRow>
           </TableHead>
           <TableBody>
-            {data?.map((item) => (
-              <TableRow key={item.id} hover>
-                <TableCell> {item.firstName} </TableCell>
-                <TableCell> {item.lastName} </TableCell>
-                <TableCell> {item.emailID} </TableCell>
-                <TableCell> {item.location} </TableCell>
-                <TableCell className={classes.btnCellStyle} align={"center"}>
-                  <Button
-                    className={classes.editBtnStyle}
-                    variant={"contained"}
-                    onClick={() => handleEditClick(item.id)}
-                  >
-                    {"Edit"}
-                  </Button>
-                  <Button
-                    variant={"contained"}
-                    className={classes.deleteBtnStyle}
-                    onClick={() => handleDeleteClick(item.id)}
-                  >
-                    {"Delete"}
-                  </Button>
-                </TableCell>
-              </TableRow>
-            ))}
+            {!Boolean(searchString)
+              ? data?.map((item) => (
+                  <TableRow key={item.id} hover>
+                    <TableCell> {item.firstName} </TableCell>
+                    <TableCell> {item.lastName} </TableCell>
+                    <TableCell> {item.emailID} </TableCell>
+                    <TableCell> {item.location} </TableCell>
+                    <TableCell
+                      className={classes.btnCellStyle}
+                      align={"center"}
+                    >
+                      <Button
+                        className={classes.editBtnStyle}
+                        variant={"contained"}
+                        onClick={() => handleEditClick(item.id)}
+                      >
+                        {"Edit"}
+                      </Button>
+                      <Button
+                        variant={"contained"}
+                        className={classes.deleteBtnStyle}
+                        onClick={() => handleDeleteClick(item.id)}
+                      >
+                        {"Delete"}
+                      </Button>
+                    </TableCell>
+                  </TableRow>
+                ))
+              : (filterArray = data.filter(
+                  (item) => item.firstName === searchString
+                ))(
+                  filterArray?.map((item) => (
+                    <TableRow key={item.id} hover>
+                      <TableCell> {item.firstName} </TableCell>
+                      <TableCell> {item.lastName} </TableCell>
+                      <TableCell> {item.emailID} </TableCell>
+                      <TableCell> {item.location} </TableCell>
+                      <TableCell
+                        className={classes.btnCellStyle}
+                        align={"center"}
+                      >
+                        <Button
+                          className={classes.editBtnStyle}
+                          variant={"contained"}
+                          onClick={() => handleEditClick(item.id)}
+                        >
+                          {"Edit"}
+                        </Button>
+                        <Button
+                          variant={"contained"}
+                          className={classes.deleteBtnStyle}
+                          onClick={() => handleDeleteClick(item.id)}
+                        >
+                          {"Delete"}
+                        </Button>
+                      </TableCell>
+                    </TableRow>
+                  ))
+                )}
           </TableBody>
         </Table>
       </TableContainer>
