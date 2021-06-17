@@ -81,18 +81,19 @@ function DisplayFrom({ data, updateDatabase, initialSet, status, setModal }) {
     setErrors(Validation(values));
     const { id, fName, lName, address, email, password } = values;
     console.log("Edit object: ", values);
-    // const index = data.findIndex((item) => item.id === id);
-    // const updateObj = {
-    //   id: id,
-    //   firstName: fName,
-    //   lastName: lName,
-    //   emailID: email,
-    //   pwd: password,
-    //   location: address,
-    // };
-    // let updateArray = data;
-    // updateArray.splice(index, 1, updateObj);
-    updateDatabase(data.map((item) => (item.id === id ? values : item)));
+    const index = data.findIndex((item) => item.id === id);
+    const updateObj = {
+      id: id,
+      firstName: fName,
+      lastName: lName,
+      emailID: email,
+      pwd: password,
+      location: address,
+    };
+    let updateArray = data;
+    updateArray.splice(index, 1, updateObj);
+    updateDatabase(updateArray);
+    // updateDatabase(data.map((item) => (item.id === id ? values : item)));
     setModal({
       type: "",
       id: "",

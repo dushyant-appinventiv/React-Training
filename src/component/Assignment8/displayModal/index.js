@@ -5,7 +5,7 @@ import { Modal } from "@material-ui/core";
 import { Typography } from "@material-ui/core";
 
 function DisplayModal({ setDB, database, values, setValues }) {
-  const [isOpen, setOpen] = useState(values.status);
+  // const [isOpen, setOpen] = useState(values.status);
   const [data, setData] = useState({});
 
   useEffect(() => {
@@ -26,19 +26,28 @@ function DisplayModal({ setDB, database, values, setValues }) {
     }
   }, [values.type]);
 
-  useEffect(() => {
-    setOpen(values.status);
-  }, [values.status]);
+  // useEffect(() => {
+  //   setOpen(values.status);
+  // }, [values.status]);
 
   const handleClose = () => {
-    setOpen(false);
+    setValues({
+      id: "",
+      type: "",
+      status: false,
+    });
   };
 
   const handleDelete = () => {
     const index = database.findIndex((item) => item.id === values.id);
     let updateArray = [...database];
     updateArray.splice(index, 1);
-    setOpen(false);
+    // setOpen(false);
+    setValues({
+      id: "",
+      type: "",
+      status: false,
+    });
     setDB(updateArray);
   };
 
@@ -47,10 +56,9 @@ function DisplayModal({ setDB, database, values, setValues }) {
       style={{ height: "500px", width: "500px" }}
       BackdropComponent={Backdrop}
       onClose={handleClose}
-      open={isOpen}
+      open={values.status}
     >
       <>
-        {console.log("Modal :" + isOpen)}
         {values.type === "edit" ? (
           <Typography variant={"h4"} color={"textSecondary"}>
             {"Edit Form"}
@@ -76,7 +84,9 @@ function DisplayModal({ setDB, database, values, setValues }) {
         <Button
           variant={"outlined"}
           color={"primary"}
-          onClick={() => handleClose}
+          onClick={() => {
+            handleClose();
+          }}
         >
           {"Close"}
         </Button>
