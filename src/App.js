@@ -34,7 +34,8 @@ import HomeScreen from "./modules/Assignment8/HomePage";
 class App extends React.Component {
   render() {
     return (
-      <div className={"appWrapperAssignment6"}>
+      // please do go through app.css for for classname for the following div
+      <div className={"appWrapperAssignment7"}>
         {/* ASSIGNMENT 3 */}
         {/* <CoverPage />
         <CardsSection />
@@ -55,14 +56,14 @@ class App extends React.Component {
           points={bigData[1].points}
         />
         <Footer /> */}
+
+        {/* ASSIGNMENT 4 */}
+        {/* <Header />
+        <Problems />
+        <SideBar /> */}
+
         {/* ASSIGNEMNT 5 */}
-        {/* <div>
-          <SideBar />
-        </div>
-        <div>
-          <Header />
-          <Problems />
-        </div> */}
+        {/* <MaterialLayout /> */}
 
         {/* ASSIGNMENT 6 */}
         {/* <Router>
@@ -91,6 +92,7 @@ class App extends React.Component {
           </Switch>
         </Router> */}
 
+        {/* ASSIGNMENT 8 */}
         <HomeScreen />
       </div>
     );
