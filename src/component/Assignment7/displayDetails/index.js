@@ -9,7 +9,7 @@ function DisplayDetails({ category, data }) {
   }, [data]);
 
   return (
-    <Box margin={"5% 0% 2%"} maxWidth={500} padding={10} component={Paper}>
+    <Box margin={"5% 0% 2%"} maxWidth={500} padding={3} component={Paper}>
       <Typography gutterBottom color={"secondary"} variant={"h5"}>
         {commonDB?.name}
       </Typography>
@@ -46,7 +46,7 @@ function DisplayDetails({ category, data }) {
             {commonDB?.cylinders}
           </Typography>
           <Typography variant={"subtitle2"} color={"textSecondary"}>
-            {commonDB?.weight_in_lbs}
+            {commonDB?.weightInLbs}
           </Typography>
           <Typography variant={"subtitle2"} color={"textSecondary"}>
             {commonDB?.acceleration}

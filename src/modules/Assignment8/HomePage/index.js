@@ -25,11 +25,11 @@ const useStyles = makeStyles({
 
 const initialValues = {
   id: "",
-  fName: "example",
-  lName: "example",
-  email: "dushyant@goyl.in",
-  address: "Address",
-  password: "12345",
+  userfName: "",
+  userlName: "",
+  userEmail: "",
+  userAddress: "",
+  userPassword: "",
 };
 
 function HomeScreen() {

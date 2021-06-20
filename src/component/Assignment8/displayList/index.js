@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import DisplayModal from "../displayModal";
 import {
   TableBody,
   Button,
@@ -39,8 +38,6 @@ const useStyles = makeStyles({
     alignItems: "center",
   },
 });
-
-let filterArray = [];
 
 function DisplayList({ data, setModal, search }) {
   const classes = useStyles();

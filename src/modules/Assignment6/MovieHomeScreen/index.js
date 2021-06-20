@@ -18,16 +18,16 @@ function MovieHomeScreen() {
 
   const changeRate1 = () => {
     console.log("Rating 1 changed");
-    setRating1(Math.floor(Math.random() * 10) % 5);
+    setRating1((Math.floor(Math.random() * 10) + 1) % 7);
   };
 
   const changeRate2 = () => {
     console.log("Rating 2 changed");
-    setRating2(Math.floor(Math.random() * 10) % 5);
+    setRating2((Math.floor(Math.random() * 10) + 1) % 7);
   };
 
   setTimeout(() => {
-    setRating3(Math.floor(Math.random() * 10) % 5);
+    setRating3((Math.floor(Math.random() * 10) + 1) % 7);
   }, 2500);
 
   return (
