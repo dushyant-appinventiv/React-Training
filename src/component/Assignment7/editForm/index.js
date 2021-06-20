@@ -29,7 +29,7 @@ function EditForm({ category, data, setVehicleData }) {
   const [vehiclePrice, setPrice] = useState(data.price);
   const [vehicleAcc, setAcceleration] = useState(data.acceleration);
   const [vehicleCylinders, setCylinders] = useState(data.cylinders);
-  const [weight, setWeight] = useState(data.weight_in_lbs);
+  const [weight, setWeight] = useState(data.weightInLbs);
 
   function handleEditFormSubmit(e) {
     e.preventDefault();
@@ -54,11 +54,10 @@ function EditForm({ category, data, setVehicleData }) {
         year: dateOfDelivery,
         acceleration: vehicleAcc,
         cylinders: vehicleCylinders,
-        weight_in_lbs: weight,
+        weightInLbs: weight,
       };
       data = editObject;
       const index = carsData.findIndex((item) => item.id === data.id);
-      console.log(index);
       carsData.splice(index, 1, data);
       window.localStorage.setItem("carsDB", JSON.stringify(carsData));
       window.localStorage.setItem("data", JSON.stringify(carsData[index]));
@@ -90,10 +89,8 @@ function EditForm({ category, data, setVehicleData }) {
           onChange={(e) => setDateOfDelivery(e.target.value)}
           type={"date"}
           className={classes.textFieldStyle}
-          datatype={"date"}
-          defaultValue={"2020-12-31"}
-          label={"Delivery Date"}
-          placeholder={"none"}
+          format={category === "bikes" ? "DD-MM-YYYY" : "YYYY-MM-DD"}
+          placeholder={"Delivery Date"}
           color={"primary"}
         />
         {category === "bikes" ? (
