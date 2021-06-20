@@ -44,6 +44,9 @@ const useStyles = makeStyles({
   btnStyles: {
     height: "55px",
   },
+  shoppingBtnStyle: {
+    color: "#8D8D8D",
+  },
 });
 
 export default function CardsCotainer() {
@@ -66,9 +69,8 @@ export default function CardsCotainer() {
               {"BUY"}
             </Button>
             <Button
-              className={classes.btnStyles}
+              className={classes.btnStyles + " " + classes.shoppingBtnStyle}
               variant={"outlined"}
-              color={"#8D8D8D"}
               startIcon={<ShoppingCart />}
             >
               {"SELL"}
@@ -91,9 +93,7 @@ export default function CardsCotainer() {
                 }}
               >
                 <option value={"USA"}>{"USA"}</option>
-                <option value={"IND"} selected>
-                  {"IND"}
-                </option>
+                <option value={"IND"}>{"IND"}</option>
                 <option value={"ESP"}>{"ESP"}</option>
               </Select>
             </FormControl>
@@ -108,23 +108,20 @@ export default function CardsCotainer() {
                 }}
               >
                 <option value={"IN"}>{"India"}</option>
-                <option value={"AFG"} selected>
-                  {"Afghanistan"}
-                </option>
+                <option value={"AFG"}>{"Afghanistan"}</option>
                 <option value={"ESP"}>{"Spain"}</option>
               </Select>
             </FormControl>
             <FormControl variant="outlined">
               <Select
                 native
+                defaultValue={"All Online Offers"}
                 inputProps={{
                   name: "countryName",
                   id: "country-select",
                 }}
               >
-                <option value={"USA"} selected>
-                  {"All online offers"}
-                </option>
+                <option value={"Offers"}>{"All online offers"}</option>
                 <option value={"NEFT"}>{"NEFT Transfer"}</option>
                 <option value={"PAYTM"}>{"PayTM"}</option>
               </Select>

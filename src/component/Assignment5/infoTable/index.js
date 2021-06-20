@@ -17,6 +17,7 @@ import React from "react";
 
 const dataBuyerTable = [
   {
+    id: 1,
     seller: "sfoefonoen (32.53%)",
     method: {
       bank: " IMPS Bank Transfer India",
@@ -26,6 +27,7 @@ const dataBuyerTable = [
     limits: "2500.00 - 20000.00 INR",
   },
   {
+    id: 2,
     seller: "sfoefonoen (32.53%)",
     method: {
       bank: " IMPS Bank Transfer India",
@@ -35,6 +37,7 @@ const dataBuyerTable = [
     limits: "2500.00 - 20000.00 INR",
   },
   {
+    id: 3,
     seller: "sfoefonoen (32.53%)",
     method: {
       bank: " IMPS Bank Transfer India",
@@ -44,6 +47,7 @@ const dataBuyerTable = [
     limits: "2500.00 - 20000.00 INR",
   },
   {
+    id: 4,
     seller: "sfoefonoen (32.53%)",
     method: {
       bank: " IMPS Bank Transfer India",
@@ -53,6 +57,7 @@ const dataBuyerTable = [
     limits: "2500.00 - 20000.00 INR",
   },
   {
+    id: 5,
     seller: "sfoefonoen (32.53%)",
     method: {
       bank: " IMPS Bank Transfer India",
@@ -131,11 +136,11 @@ export default function InfoTable() {
 
   function getBuyData(item) {
     return (
-      <TableRow hover>
-        <TableCell padding={"inherit"}>
+      <TableRow key={item.id} hover>
+        <TableCell padding={"default"}>
           <Link
             className={classes.linkStyle + " " + classes.flexRowCenter}
-            underline={"true"}
+            underline={"always"}
             href={"#"}
           >
             {item.seller}
@@ -171,15 +176,15 @@ export default function InfoTable() {
             </div>
           </div>
         </TableCell>
-        <TableCell>
+        <TableCell padding={"default"}>
           <Typography variant={"h5"} className={classes.priceStyle}>
             {item.price}
           </Typography>
         </TableCell>
-        <TableCell padding={"0px 10px 0px 0px"} align={"right"}>
+        <TableCell padding={"default"} align={"right"}>
           <Typography variant={"subtitle1"}> {item.limits} </Typography>
         </TableCell>
-        <TableCell align={"center"}>
+        <TableCell padding={"default"} align={"center"}>
           <Button variant={"contained"} className={classes.buySellBtnStyle}>
             {"BUY"}
           </Button>
@@ -193,20 +198,17 @@ export default function InfoTable() {
       <Table padding={"none"}>
         <TableHead>
           <TableRow>
-            <TableCell padding={"0px 10px"} className={classes.tableHeadStyle}>
+            <TableCell padding={"default"} className={classes.tableHeadStyle}>
               {"Buyer"}
             </TableCell>
-            <TableCell
-              padding={"0px 0px 0px 20px"}
-              className={classes.tableHeadStyle}
-            >
+            <TableCell padding={"default"} className={classes.tableHeadStyle}>
               {"Payment Method"}
             </TableCell>
-            <TableCell className={classes.tableHeadStyle}>
+            <TableCell padding={"default"} className={classes.tableHeadStyle}>
               {"Price/XMR"}
             </TableCell>
             <TableCell
-              padding={"0px 10px 0px 0px"}
+              padding={"default"}
               align={"right"}
               className={classes.tableHeadStyle}
             >

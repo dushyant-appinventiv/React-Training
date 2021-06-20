@@ -10,6 +10,8 @@ import {
   Toolbar,
   Typography,
   Box,
+  FormControlLabel,
+  Switch,
 } from "@material-ui/core";
 import { FingerprintSharp, PersonAddSharp } from "@material-ui/icons";
 import InfoTable from "../../../component/Assignment5/infoTable";
@@ -35,8 +37,13 @@ const useStyles = makeStyles({
   colorWhite: {
     backgroundColor: "#ffffff",
   },
-  justifyFlexEnd: {
-    justifyContent: "flex-end",
+  gridRightStyle: {
+    maxWidth: "100%",
+    flexBasis: "100%",
+    padding: "6% 1% 0% 10%",
+  },
+  justifyFlexbtw: {
+    justifyContent: "space-between",
   },
   colorGreenBtn: {
     backgroundColor: "#398538",
@@ -77,24 +84,40 @@ function MaterialLayout() {
       <Grid
         item
         md={11}
-        className={classes.displayFlexCol + " " + classes.colorGrey}
+        className={
+          classes.displayFlexCol +
+          " " +
+          classes.colorGrey +
+          " " +
+          classes.gridRightStyle
+        }
       >
         <AppBar className={classes.colorWhite}>
           <Toolbar
-            className={classes.displayFlexRow + " " + classes.justifyFlexEnd}
+            style={{ padding: "0% 3% 0% 8%" }}
+            className={classes.displayFlexRow + " " + classes.justifyFlexbtw}
           >
-            <Button
-              className={classes.colorGreenBtn}
-              startIcon={<PersonAddSharp />}
-            >
-              {"SIGN UP FREE"}
-            </Button>
-            <Button
-              className={classes.colorBlueBtn}
-              startIcon={<FingerprintSharp />}
-            >
-              {"LOG IN"}
-            </Button>
+            <FormControlLabel
+              value="bottom"
+              style={{ fontSize: "10px", color: "black" }}
+              control={<Switch style={{ color: "#fcc603" }} />}
+              label="On JS"
+              labelPlacement="bottom"
+            />
+            <div>
+              <Button
+                className={classes.colorGreenBtn}
+                startIcon={<PersonAddSharp />}
+              >
+                {"SIGN UP FREE"}
+              </Button>
+              <Button
+                className={classes.colorBlueBtn}
+                startIcon={<FingerprintSharp />}
+              >
+                {"LOG IN"}
+              </Button>
+            </div>
           </Toolbar>
         </AppBar>
         <CardsContent />
