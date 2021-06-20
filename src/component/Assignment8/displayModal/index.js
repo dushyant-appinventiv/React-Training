@@ -1,26 +1,39 @@
 import React, { useEffect, useState } from "react";
-import { Button, Backdrop } from "@material-ui/core";
+import {
+  Button,
+  makeStyles,
+  Paper,
+  Modal,
+  Typography,
+  Box,
+} from "@material-ui/core";
 import DisplayFrom from "../displayForm";
-import { Modal } from "@material-ui/core";
-import { Typography } from "@material-ui/core";
+
+const useStyles = makeStyles({
+  flexColCenter: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "space-evenly",
+  },
+});
 
 function DisplayModal({ setDB, database, values, setValues }) {
   const [data, setData] = useState({});
-
+  const classes = useStyles();
   useEffect(() => {
     if (values.type === "edit") {
       const index = database.findIndex((item) => item.id === values.id);
       const { id, emailID, firstName, lastName, location, pwd } =
         database[index];
-      console.log("data : " + JSON.stringify(database[index]));
       setData({
         ...data,
         id: id,
-        email: emailID,
-        fName: firstName,
-        lName: lastName,
-        address: location,
-        password: pwd,
+        userEmail: emailID,
+        userfName: firstName,
+        userlName: lastName,
+        userAddress: location,
+        userPassword: pwd,
       });
     }
   }, [values.type]);
@@ -47,12 +60,16 @@ function DisplayModal({ setDB, database, values, setValues }) {
 
   return (
     <Modal
-      style={{ height: "500px", width: "500px" }}
-      BackdropComponent={Backdrop}
       onClose={handleClose}
+      className={classes.flexColCenter}
       open={values.status}
     >
-      <>
+      <Box
+        width={500}
+        padding={2}
+        className={classes.flexColCenter}
+        component={Paper}
+      >
         {values.type === "edit" ? (
           <Typography variant={"h4"} color={"textSecondary"}>
             {"Edit Form"}
@@ -78,6 +95,7 @@ function DisplayModal({ setDB, database, values, setValues }) {
         <Button
           variant={"outlined"}
           color={"primary"}
+          style={{ margin: "15px" }}
           onClick={() => {
             handleClose();
           }}
@@ -95,7 +113,7 @@ function DisplayModal({ setDB, database, values, setValues }) {
             {"Yes, Delete"}
           </Button>
         ) : null}
-      </>
+      </Box>
     </Modal>
   );
 }

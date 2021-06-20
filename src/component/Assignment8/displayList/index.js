@@ -39,8 +39,6 @@ const useStyles = makeStyles({
   },
 });
 
-let filterArray = [];
-
 function DisplayList({ data, setModal, search }) {
   const classes = useStyles();
   const [searchString, setSearchString] = useState("");
