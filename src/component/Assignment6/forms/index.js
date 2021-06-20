@@ -26,19 +26,18 @@ const validate = (values) => {
   return errors;
 };
 
-const entryEmail = "default@gmail.com";
-const entryPassword = "12345";
-console.log("Email and pwd : " + entryEmail + " " + entryPassword);
-
 function Forms(props) {
   let history = useHistory();
 
   function loginSubmit() {
+    console.log(formik.values);
     if (
-      entryEmail === formik.values.email &&
-      entryPassword === formik.values.password
+      formik.values.email === localStorage.getItem("email") &&
+      formik.values.password === localStorage.getItem("pwd")
     ) {
       history.push("/movies");
+    } else {
+      return;
     }
   }
 
@@ -51,8 +50,8 @@ function Forms(props) {
     validate,
     onSubmit: (values) => {
       console.log("On submit called");
-      // localStorage.setItem("email", values.email);
-      // localStorage.setItem("pwd", values.password);
+      localStorage.setItem("email", values.email);
+      localStorage.setItem("pwd", values.password);
       history.push("/login");
     },
   });

@@ -1,6 +1,4 @@
-import { makeStyles, Paper } from "@material-ui/core";
-import { Typography } from "@material-ui/core";
-import { Box } from "@material-ui/core";
+import { makeStyles, Paper, Box, Typography } from "@material-ui/core";
 import { StarSharp } from "@material-ui/icons";
 import React, { memo } from "react";
 
@@ -22,7 +20,7 @@ const useStyles = makeStyles({
 
 function MovieCard(props) {
   const classes = useStyles();
-  console.log("Card renderded : " + props.name);
+  console.log(props.name + " rerendered");
   return (
     <Box component={Paper} className={classes.movieCardStyle}>
       <Typography variant={"h4"} color={"secondary"}>
