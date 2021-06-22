@@ -1,9 +1,14 @@
 import React from "react";
-// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 
+// ASSIGNMENT 9
+import Dashboard from "./modules/Assignment9/Dashboard";
+import LoginPage from "./modules/Assignment9/LoginPage";
+import MovieDescBox from "./component/Assignment9/movieDescBox";
+
 // ASSIGNMENT 8
-import HomeScreen from "./modules/Assignment8/HomePage";
+// import HomeScreen from "./modules/Assignment8/HomePage";
 
 // ASSIGNMENT 7
 // import HomeScreen from "./modules/Assignment7/HomeScreen";
@@ -93,7 +98,22 @@ class App extends React.Component {
         </Router> */}
 
         {/* ASSIGNMENT 8 */}
-        <HomeScreen />
+        {/* <HomeScreen /> */}
+
+        {/* ASSIGNMENT 9 */}
+        <Router>
+          <Switch>
+            <Route path={"/"} exact>
+              <LoginPage />
+            </Route>
+            <Route path={"/dashboard"}>
+              <Dashboard />
+            </Route>
+            <Route path={"/movieDesc/:movieID"}>
+              <MovieDescBox />
+            </Route>
+          </Switch>
+        </Router>
       </div>
     );
   }
