@@ -1,11 +1,14 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 
+// ASSIGNMENT 10
+import AppWrapper from "./modules/Assignment10/AppWrapper";
+
 // ASSIGNMENT 9
-import Dashboard from "./modules/Assignment9/Dashboard";
-import LoginPage from "./modules/Assignment9/LoginPage";
-import MovieDescBox from "./component/Assignment9/movieDescBox";
+// import Dashboard from "./modules/Assignment9/Dashboard";
+// import LoginPage from "./modules/Assignment9/LoginPage";
+// import MovieDescBox from "./component/Assignment9/movieDescBox";
 
 // ASSIGNMENT 8
 // import HomeScreen from "./modules/Assignment8/HomePage";
@@ -36,13 +39,12 @@ import MovieDescBox from "./component/Assignment9/movieDescBox";
 // import AboutDoge from "./modules/Assignment3/AboutDoge";
 // import CoverPage from "./modules/Assignment3/CoverPage";
 
-class App extends React.Component {
-  render() {
-    return (
-      // please do go through app.css for for classname for the following div
-      <div className={"appWrapperAssignment7"}>
-        {/* ASSIGNMENT 3 */}
-        {/* <CoverPage />
+function App() {
+  return (
+    // please do go through app.css for for classname for the following div
+    <div className={"appWrapperAssignment9"}>
+      {/* ASSIGNMENT 3 */}
+      {/* <CoverPage />
         <CardsSection />
         <DogecoinBody />
         <BigData
@@ -62,16 +64,16 @@ class App extends React.Component {
         />
         <Footer /> */}
 
-        {/* ASSIGNMENT 4 */}
-        {/* <Header />
+      {/* ASSIGNMENT 4 */}
+      {/* <Header />
         <Problems />
         <SideBar /> */}
 
-        {/* ASSIGNEMNT 5 */}
-        {/* <MaterialLayout /> */}
+      {/* ASSIGNEMNT 5 */}
+      {/* <MaterialLayout /> */}
 
-        {/* ASSIGNMENT 6 */}
-        {/* <Router>
+      {/* ASSIGNMENT 6 */}
+      {/* <Router>
           <Switch>
             <Route exact path={"/"}>
               <SignIn />
@@ -85,8 +87,8 @@ class App extends React.Component {
           </Switch>
         </Router> */}
 
-        {/* ASSIGNMENT 7 */}
-        {/* <Router>
+      {/* ASSIGNMENT 7 */}
+      {/* <Router>
           <Switch>
             <Route exact path={"/"}>
               <HomeScreen />
@@ -97,11 +99,11 @@ class App extends React.Component {
           </Switch>
         </Router> */}
 
-        {/* ASSIGNMENT 8 */}
-        {/* <HomeScreen /> */}
+      {/* ASSIGNMENT 8 */}
+      {/* <HomeScreen /> */}
 
-        {/* ASSIGNMENT 9 */}
-        <Router>
+      {/* ASSIGNMENT 9 */}
+      {/* <Router>
           <Switch>
             <Route path={"/"} exact>
               <LoginPage />
@@ -113,10 +115,12 @@ class App extends React.Component {
               <MovieDescBox />
             </Route>
           </Switch>
-        </Router>
-      </div>
-    );
-  }
+        </Router> */}
+
+      {/* ASSIGNMENT 10 */}
+      <AppWrapper />
+    </div>
+  );
 }
 
 export default App;
