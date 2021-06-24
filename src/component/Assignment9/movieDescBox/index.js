@@ -6,7 +6,6 @@ import { cardsData } from "../../../data";
 export default function MovieDescBox(props) {
   const { movieID } = useParams();
   const data = cardsData.find((item) => item.id == movieID);
-  console.log(props);
 
   return (
     <Box
