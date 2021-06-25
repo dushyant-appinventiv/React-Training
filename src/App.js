@@ -2,6 +2,11 @@ import React from "react";
 // import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 
+// ASSIGNMENT 11
+import { Provider } from "react-redux";
+import { store } from "./store";
+import MainText from "./modules/Assignment11/MainScreen/mainScreen";
+
 // ASSIGNMENT 10
 import AppWrapper from "./modules/Assignment10/AppWrapper";
 
@@ -118,7 +123,12 @@ function App() {
         </Router> */}
 
       {/* ASSIGNMENT 10 */}
-      <AppWrapper />
+      {/* <AppWrapper /> */}
+
+      {/* ASSIGNEMNT 11 */}
+      <Provider store={store}>
+        <MainText />
+      </Provider>
     </div>
   );
 }
