@@ -2,13 +2,18 @@ import React from "react";
 // import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 
+// ASSIGNMENT 12
+import { ListProvider } from "./modules/Assignment12/listReducer";
+import { ThemeProvider } from "./modules/Assignment12/themeReducer";
+import ListScreen from "./modules/Assignment12/ListScreen";
+
 // ASSIGNMENT 11
-import { Provider } from "react-redux";
-import { store } from "./store";
-import MainText from "./modules/Assignment11/MainScreen/mainScreen";
+// import { Provider } from "react-redux";
+// import { store } from "./store";
+// import MainText from "./modules/Assignment11/MainScreen/mainScreen";
 
 // ASSIGNMENT 10
-import AppWrapper from "./modules/Assignment10/AppWrapper";
+// import AppWrapper from "./modules/Assignment10/AppWrapper";
 
 // ASSIGNMENT 9
 // import Dashboard from "./modules/Assignment9/Dashboard";
@@ -47,7 +52,7 @@ import AppWrapper from "./modules/Assignment10/AppWrapper";
 function App() {
   return (
     // please do go through app.css for for classname for the following div
-    <div className={"appWrapperAssignment9"}>
+    <div className={"appWrapper"}>
       {/* ASSIGNMENT 3 */}
       {/* <CoverPage />
         <CardsSection />
@@ -126,9 +131,16 @@ function App() {
       {/* <AppWrapper /> */}
 
       {/* ASSIGNEMNT 11 */}
-      <Provider store={store}>
+      {/* <Provider store={store}>
         <MainText />
-      </Provider>
+      </Provider> */}
+
+      {/* ASSIGNMENT 12 */}
+      <ThemeProvider>
+        <ListProvider>
+          <ListScreen />
+        </ListProvider>
+      </ThemeProvider>
     </div>
   );
 }
